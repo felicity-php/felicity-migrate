@@ -1,0 +1,27 @@
+{
+    "name": "felicity-php/felicity-migrate",
+    "version": "1.0.0",
+    "description": "Migrations",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "TJ Draper",
+            "email": "tj@buzzingpixel.com",
+            "homepage": "https://buzzingpixel.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "felicity\\migrate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\": "tests/"
+        }
+    },
+    "require": {
+        "roave/security-advisories": "dev-master",
+        "felicity-php/felicity-config": "^1.0"
+    }
+}
