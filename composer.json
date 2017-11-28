@@ -20,7 +20,8 @@
         "felicity-php/felicity-config": "^1.0",
         "felicity-php/felicity-routing": "^1.0",
         "felicity-php/felicity-console-output": "^1.0",
-        "felicity-php/felicity-translate": "^1.0"
+        "felicity-php/felicity-translate": "^1.0",
+        "felicity-php/felicity-architect": "^1.0"
     },
     "extra": {
         "bootstrap": [
