@@ -9,12 +9,15 @@
 
 use felicity\routing\Routing;
 use felicity\migrate\Migrate;
+use felicity\migrate\commands\MigrateUpCommand;
+use felicity\migrate\commands\MigrateListCommand;
+use felicity\migrate\commands\MigrateMakeCommand;
 
 Routing::cli(
     'migrate/list',
     [
-        Migrate::class,
-        'listMigrations'
+        MigrateListCommand::class,
+        'run'
     ],
     'felicityMigrate',
     'migrateListDesc'
@@ -23,8 +26,8 @@ Routing::cli(
 Routing::cli(
     'migrate/up',
     [
-        Migrate::class,
-        'runMigrations'
+        MigrateUpCommand::class,
+        'run'
     ],
     'felicityMigrate',
     'migrateUpDesc'
@@ -33,8 +36,8 @@ Routing::cli(
 Routing::cli(
     'migrate/make',
     [
-        Migrate::class,
-        'makeMigration'
+        MigrateMakeCommand::class,
+        'run'
     ],
     'felicityMigrate',
     'migrateMakeDesc'
