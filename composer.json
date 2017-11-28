@@ -15,13 +15,23 @@
             "felicity\\migrate\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "tests\\": "tests/"
-        }
-    },
     "require": {
         "roave/security-advisories": "dev-master",
-        "felicity-php/felicity-config": "^1.0"
+        "felicity-php/felicity-config": "^1.0",
+        "felicity-php/felicity-routing": "^1.0",
+        "felicity-php/felicity-console-output": "^1.0",
+        "felicity-php/felicity-translate": "^1.0"
+    },
+    "extra": {
+        "bootstrap": [
+            {
+                "type": "directoryRecursive",
+                "directoryPath": "src/translations"
+            },
+            {
+                "type": "file",
+                "filePath": "src/Bootstrap.php"
+            }
+        ]
     }
 }
