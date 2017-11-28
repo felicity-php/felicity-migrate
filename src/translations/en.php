@@ -11,7 +11,7 @@ use felicity\config\Config;
 Config::set('lang.translations.en.felicityMigrate', [
     'migrateListDesc' => 'Lists migrations that need to run',
     'migrateUpDesc' => 'Runs migrations that need to run',
-    'migrateMakeDesc' => 'Makes a migration. Use --description=MyDescription',
+    'migrateMakeDesc' => 'Makes a migration',
     'noMigrationsNeedToRun' => 'No migrations need to run',
     'followingMigrationsNeedToRun' => 'The following migrations need to be run',
     'group:' => 'Group:',
@@ -23,4 +23,12 @@ Config::set('lang.translations.en.felicityMigrate', [
     'migrationsComplete' => 'Migrations complete',
     'safeUpMethodNotFound' => '`safeUp` method not found on migration class',
     'migrationUnsuccessful' => 'Migration was unsuccessful. Aborting...',
+    'migrationsDirectory:' => 'Migrations directory:',
+    'migrationsDirDoesNotExist' => 'The specified migrations directory does not exist',
+    'migrationName:' => 'Migration name:',
+    'migrationNameRequired' => 'A migration name is required',
+    'migrationWillBeCreatedAt:' => 'Migration will be created at:',
+    'consoleProceed' => 'Proceed? (y|n): ',
+    'aborting' => 'Aborting',
+    'migrationCreatedSuccessfully' => 'Migration created successfully',
 ]);

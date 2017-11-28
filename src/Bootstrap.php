@@ -7,38 +7,31 @@
  * @license Apache-2.0
  */
 
+use felicity\config\Config;
 use felicity\routing\Routing;
-use felicity\migrate\Migrate;
 use felicity\migrate\commands\MigrateUpCommand;
 use felicity\migrate\commands\MigrateListCommand;
 use felicity\migrate\commands\MigrateMakeCommand;
 
 Routing::cli(
     'migrate/list',
-    [
-        MigrateListCommand::class,
-        'run'
-    ],
+    [MigrateListCommand::class, 'run'],
     'felicityMigrate',
     'migrateListDesc'
 );
 
 Routing::cli(
     'migrate/up',
-    [
-        MigrateUpCommand::class,
-        'run'
-    ],
+    [MigrateUpCommand::class, 'run'],
     'felicityMigrate',
     'migrateUpDesc'
 );
 
 Routing::cli(
     'migrate/make',
-    [
-        MigrateMakeCommand::class,
-        'run'
-    ],
+    [MigrateMakeCommand::class, 'run'],
     'felicityMigrate',
     'migrateMakeDesc'
 );
+
+Config::set('felicity.migrate.srcDir', __DIR__);

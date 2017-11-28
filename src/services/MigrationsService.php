@@ -8,6 +8,7 @@
 
 namespace felicity\migrate\services;
 
+use DateTime;
 use Pixie\Exception;
 use DirectoryIterator;
 use ReflectionException;
@@ -169,5 +170,58 @@ class MigrationsService
                 'group' => $migrationModel->groupName,
                 'migration' => $migrationModel->className,
             ]);
+    }
+
+    /**
+     * Makes a migration class name
+     * @param string $name
+     * @return string
+     */
+    public function getMigrationClassName(string $name)
+    {
+        $date = new DateTime();
+
+        $className = "m{$date->format('Y_m_d_His')}";
+
+        $first = true;
+
+        foreach (range(\strlen($className), 18) as $key => $val) {
+            if ($first) {
+                $first = false;
+                continue;
+            }
+
+            $className .= '0';
+        }
+
+        $className .= "_{$name}";
+
+        return $className;
+    }
+
+    /**
+     * Makes a migration file
+     * @param string $path
+     * @param string $className
+     */
+    public function makeMigration(string $path, string $className)
+    {
+        $srcDir = $this->config->getItem('felicity.migrate.srcDir');
+
+        $contents = str_replace(
+            array(
+                'Class Migration',
+                'class Migration',
+            ),
+            array(
+                "Class {$className}",
+                "class {$className}",
+            ),
+            file_get_contents(
+                "{$srcDir}/templates/Migration.php"
+            )
+        );
+
+        file_put_contents("{$path}/{$className}.php", $contents);
     }
 }
